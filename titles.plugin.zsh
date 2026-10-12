@@ -20,6 +20,7 @@ function update_title() {
   elif [[ "$TERM" =~ "^rxvt-unicode.*" ]]; then
     printf '\33]2;%s:%s\007' ${(%)a} ${(%)2}
   fi
+  zellij action rename-pane "${(%)a} ${(%)2}" &> /dev/null
 }
 
 # called just before the prompt is printed
